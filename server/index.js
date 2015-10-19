@@ -45,8 +45,8 @@ app.post('/add_room', (req, res)=>{
 	var filter 		= req.body.filter;
 
 	var profile 	= profiles[socketID];
-
-	console.log(profile);
+	var roomID 		= getRoomID();
+	
 	if(filter.gender !== 'any' && filter.gender !== profile.gender){
 		res.json({
 			state 	: 'fail',
@@ -55,17 +55,17 @@ app.post('/add_room', (req, res)=>{
 		return;
 	}
 
-	rooms[socketID] = {
+	rooms[roomID] = {
 		title 	: title,
 		filter 	: filter,
-		roomKey : socketID,
+		roomKey : roomID,
 		userKeys: [],
 		users 	: []
 	}
 
 	res.json({
 		state 	: 'succes',
-		data 	: socketID
+		data 	: roomID
 	});
 });
 
@@ -178,4 +178,9 @@ function leaveRoom(profiles, rooms, socket){
 function checkName(name, socketID){
 	var findSocketID = _.findKey(profiles, {name: name});
 	return findSocketID === undefined || findSocketID === socketID;
+}
+
+var _roomID = 0;
+function getRoomID(){
+	return _roomID++;
 }

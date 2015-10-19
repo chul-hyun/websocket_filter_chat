@@ -259,6 +259,7 @@ function roomCtrl($, socketID){
 }
 
 function chatCtrl($, socketID){
+	var $chat 		= $('#chat');
 	var $content 	= $('#content');
 	var $chatInput 	= $('#chat_input');
 	
@@ -275,6 +276,7 @@ function chatCtrl($, socketID){
 	socket.on('receive message', addMessage);
 
 	socket.on('leave room', ()=>{
+		$chat.find('*').html('');
 		alert('leave room');
 	});
 
