@@ -20,9 +20,12 @@ function profileCtrl($, socketID){
 	var $name 			= $('#name');
 	var $gender 		= $('#gender');
 	var $profileDone 	= $('#profile_done');
+	var $chatWrapper 	= $('#chat_wrapper');
 
 	var passedName 		= false;
 	var passedGender 	= false;
+
+	$chatWrapper.hide();
 
 	checkName();
 	checkGender();
@@ -109,6 +112,8 @@ function profileCtrl($, socketID){
 					.add($name)
 					.add($gender)
 					.prop('disabled', true);
+
+				$chatWrapper.show(1000);
 			}else{
 				checkName();
 				checkGender();
