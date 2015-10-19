@@ -1,0 +1,24 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "authors": [
+    "람츠 <qkrcjfgus3@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "socket.io-client": "~1.3.7",
+    "lodash": "~3.10.1"
+  }
+}

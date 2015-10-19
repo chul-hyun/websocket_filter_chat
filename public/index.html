@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter chat</title>
+	<script src="lib/socket.io-client/socket.io.js"></script>
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/lodash/lodash.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Filter chat</h1>
+	
+	<section>
+		<h2>Profile</h2>
+		name: <input type="text" id="name">
+		gender: 
+		<select id="gender">
+			<option value="chose">성별</option>
+			<option value="man">남</option>
+			<option value="woman">여</option>
+		</select>
+		<button id="profile_done">Complete</button>
+	</section>
+	
+
+	<section>
+		<h2>Filter or Add room</h2>
+		gender: 
+		<select id="filter_gender">
+			<option value="any">상관없음</option>
+			<option value="man">남</option>
+			<option value="woman">여</option>
+		</select>
+		people limt number: <input type="number" id="people_limt_number" min="1" max="100" value="10">(이하)
+		<button id="search">Search</button>
+		<input type="text" id="room_title">
+		<button id="add_room">Add room</button>
+	</section>
+
+	<section>
+		<h2>Room list</h2>
+		<div id="room_list">
+			
+		</div>
+	</section>
+	
+	<section>
+		<h2>Chat</h2>
+		<div id="chat">
+			<div id="joiner"></div>
+			<div id="filter_info"></div>
+			<div id="users"></div>
+			<h3 id="join_room_title"></h3>
+			<div id="content"></div>
+			<input type="text" id="chat_input">
+			<button id="leave_room">exit</button>
+		</div>
+	</section>
+
+	<script src="app.js" type="text/javascript"></script>
+</body>
+</html>
